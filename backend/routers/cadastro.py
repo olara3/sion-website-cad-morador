@@ -10,7 +10,7 @@ def get_db():
     connection = pymysql.connect(
         host='127.0.0.1',
         user='sion_user',
-        password='sua_senha_aqui',  # <--- Coloque a senha do seu mariadb aqui
+        password=os.getenv("DB_PASSWORD"), # <--- Coloque a senha do seu mariadb aqui
         database='condominio_sion',
         cursorclass=pymysql.cursors.DictCursor
     )
